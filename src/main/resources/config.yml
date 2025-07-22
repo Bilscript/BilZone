@@ -1,0 +1,3 @@
+message:
+  enter-message: "§aYou have just entered the zone: §f%zone%"
+  leave-message: "§cYou have just left the zone: §f%zone%"

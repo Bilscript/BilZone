@@ -1,0 +1,12 @@
+name: BilZone
+version: '1.0-SNAPSHOT'
+main: fr.bilscript.bilzone.BilZone
+api-version: '1.21'
+authors: [ Bilskoww ]
+load: POSTWORLD
+commands:
+  zone:
+    aliases:
+      - z
+    description: Commande principale pour gérer les zones
+    permission: zone.use
