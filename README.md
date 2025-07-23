@@ -30,15 +30,6 @@ Il permet de définir des zones cubiques via deux points, de détecter l’entr�
 
 ---
 
-## Installation
-
-1. Place le fichier `BilZone-1.0-SNAPSHOT.jar` dans le dossier `plugins` de ton serveur Paper/Spigot 1.21.6.
-2. Lance ou redémarre ton serveur.
-3. Le plugin génère automatiquement un fichier `config.yml` avec les valeurs par défaut.
-4. Utilise les commandes `/zone` pour commencer à gérer tes zones.
-
----
-
 ## Configuration
 
 Le fichier `config.yml` est créé automatiquement au premier lancement.
