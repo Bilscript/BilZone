@@ -47,11 +47,15 @@ public class ZoneManager implements Listener {
 	}
 
 	public void createZone(Player player, String id) {
-
+		
 		PlayerSelection selection = BilZone.getInstance().getWandManager().getSelection(player);
 
 		if (selection == null || !selection.isValid()) {
 			player.sendMessage("§9You must select two positions with the wand!");
+			return;
+		}
+		if (selection.getFirst().getBlock().getWorld() == selection.getSecond().getBlock().getWorld()){
+			player.sendMessage("§9You must select two blocks from the same world!");
 			return;
 		}
 		if (getZone(id) != null) {
