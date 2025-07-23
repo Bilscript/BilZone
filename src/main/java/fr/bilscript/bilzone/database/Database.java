@@ -8,6 +8,7 @@ import fr.bilscript.bilzone.manager.zone.Zone;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,12 +18,14 @@ public class Database {
 	private static final Gson GSON = new GsonBuilder().serializeNulls().create();
 
 	public Map<String, Zone> load() {
-		try (final Reader reader = new FileReader(this.getFile())) {
-			final Type type = new TypeToken<Map<String, Zone>>() {
-			}.getType();
-			return GSON.fromJson(reader, type);
-		} catch (IOException e) {
-			e.printStackTrace();
+		if (Files.exists(this.getFile().toPath())) {
+			try (final Reader reader = new FileReader(this.getFile())) {
+				final Type type = new TypeToken<Map<String, Zone>>() {
+				}.getType();
+				return GSON.fromJson(reader, type);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		return new HashMap<>();
 	}
