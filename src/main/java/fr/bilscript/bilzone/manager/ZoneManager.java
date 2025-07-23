@@ -128,8 +128,4 @@ public class ZoneManager implements Listener {
 		return zones;
 	}
 
-	public void clearZones() {
-		zones.clear();
-		BilZone.getInstance().getDatabase().save();
-	}
 }
